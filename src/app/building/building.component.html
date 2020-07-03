@@ -1,0 +1,66 @@
+<div id="Head">
+    <h2 style="margin-left: 15px;">Trial App</h2>
+</div>
+<div class="mat-elevation-z8" id="body">
+    <h4><strong style="color: darkblue; margin-left: 20px;">Equipment List</strong></h4>
+        <!-- <mat-progress-bar *ngIf="bPrgBar" style="margin-left: 10px; margin-right: 10px;" mode="indeterminate"></mat-progress-bar> -->
+        <mat-form-field id="drpdn1"  appearance="fill">
+              <mat-label>Select Building</mat-label>
+              <mat-select #matBuildngdrpdwn (selectionChange)="validate(matBuildngdrpdwn.value)" required>
+                <mat-option *ngFor="let buildin of building" [value]="buildin.buildingName">{{buildin.buildingName}}</mat-option>
+              </mat-select>
+        </mat-form-field>
+        <mat-form-field id="drpdn2"  appearance="fill">
+              <mat-label>Select Edge</mat-label>
+              <mat-select #matEdgedrpdwn (selectionChange)="query(matEdgedrpdwn.value)" required>
+                <mat-option *ngFor="let edg of edge" [value]="edg.edgeName">{{edg.edgeName}}</mat-option>
+              </mat-select>
+        </mat-form-field>
+        <div id="innerbody" class="mat-elevation-z8">
+          <table id="table" mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="Equipment">
+              <th mat-header-cell *matHeaderCellDef> Equipment </th>
+              <td mat-cell *matCellDef="let element"> {{element.strEquipmentName}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="Topentry">
+              <th mat-header-cell *matHeaderCellDef> Topentry </th>
+              <td mat-cell *matCellDef="let element"> {{element.strTopEntity}} </td>
+            </ng-container>
+        
+            <!-- Weight Column -->
+            <ng-container matColumnDef="Model">
+              <th mat-header-cell *matHeaderCellDef> Model </th>
+              <td mat-cell *matCellDef="let element"> {{element.strModelName}} </td>
+            </ng-container>
+        
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="system">
+              <th mat-header-cell *matHeaderCellDef> system </th>
+              <td mat-cell *matCellDef="let element"> {{element.strSystemName}} </td>
+            </ng-container>
+        
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="CollectionInterval">
+              <th mat-header-cell *matHeaderCellDef> CollectionInterval </th>
+              <td mat-cell *matCellDef="let element"> {{element.dwCollectionInterval}} </td>
+            </ng-container>
+        
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="Actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef>
+                <div id="btn">
+                  <button id="btn1" class="btn btn-primary">History</button>
+                  <button id="btn2" class="btn btn-primary">Settings</button>
+                </div>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="strHeadings"></tr>
+            <tr mat-row *matRowDef="let row; columns: strHeadings;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 20, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+</div>

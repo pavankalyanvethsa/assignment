@@ -1,0 +1,44 @@
+[
+	{
+		"EdgeID" : 
+			[
+				{
+					"equipmentId": "7540e500-6f22-11ea-997b-66734fedfb75",
+					"equipmentName": "1:1-03", 
+					"collectionInterval": null, 
+					"systemName": "753d63bc-6f22-11ea-997b-66734fedfb75", 
+					"topEntity":"Indoor", 
+					"modelName": "FXFQ20AVEB"
+				},
+				{
+					"equipmentId": "7546ac92-6f22-11ea-997b-66734fedfb75",
+					"equipmentName": "1:1-00", 
+					"collectionInterval": null, 
+					"systemName": "753d63bc-6f22-11ea-997b-66734fedfb75", 
+					"topEntity": "Indoor", 
+					"modelName": "FXFQ20AVEB"
+				}, 
+				{
+					"equipmentId": "753d63bc-6f22-11ea-997b-66734fedfb75", 
+					"equipmentName": "1:1", 
+					"collectionInterval": 100, 
+					"systemName":"753d63bc-6f22-11ea-997b-66734fedfb75", 
+					"topEntity": "Outdoor", 
+					"modelName": "RXYP1180D"
+				}
+			]
+	},
+	{
+		"EdgeID" : 
+			[
+				{
+					"equipmentId": "6f7f278e-7581-11ea-b13e-56240fb7dcda", 
+					"equipmentName": "1:2",
+					"collectionInterval": 79, 
+					"systemName": "6f7f278e-7581-11ea-b13e-56240fb7dcda", 
+					"topEntity":"Outdoor", 
+					"modelName": "RXYQ8T7Y1B"
+				}
+			]
+	}
+]
